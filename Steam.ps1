@@ -40,7 +40,7 @@ $references_file = Join-Path $tools_dir ".references"
 New-Item "$tools_dir", "$managed_dir" -ItemType Directory -Force | Out-Null
 
 # Set URLs of dependencies and tools to download
-$steam_depotdl_url = "https://github.com/umod/DepotDownloader/releases/download/latest/dd.zip"
+$steam_depotdl_url = "https://github.com/SteamRE/DepotDownloader/releases/download/DepotDownloader_2.4.3/depotdownloader-2.4.3-hotfix1.zip"
 $de4dot_url = "https://github.com/0xd4d/de4dot/suites/507020524/artifacts/2658127"
 $patcher_url = "https://github.com/OxideMod/Oxide.Patcher/releases/download/latest/OxidePatcher.exe"
 
@@ -161,7 +161,7 @@ function Get-Dependencies {
         # Attempt to run DepotDownloader to get game DLLs
         try {
             Write-Host "$steam_access -app $steam_appid -branch $steam_branch $steam_depot -os $platform -dir $deps_dir"
-            Start-Process dotnet -WorkingDirectory $tools_dir -ArgumentList "$steam_depotdl_dll $steam_access -app $steam_appid -branch $steam_branch $steam_depot -cellid 84 -os $platform -dir $platform_dir -filelist $references_file" -NoNewWindow -Wait
+            Start-Process dotnet -WorkingDirectory $tools_dir -ArgumentList "$steam_depotdl_dll $steam_access -app $steam_appid -branch $steam_branch $steam_depot -os $platform -dir $platform_dir -filelist $references_file" -NoNewWindow -Wait
         } catch {
             Write-Host "Error: Could not start or complete getting dependencies"
             Write-Host $_.Exception | Format-List -Force
