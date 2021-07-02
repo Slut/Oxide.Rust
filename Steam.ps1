@@ -40,7 +40,7 @@ $references_file = Join-Path $tools_dir ".references"
 New-Item "$tools_dir", "$managed_dir" -ItemType Directory -Force | Out-Null
 
 # Set URLs of dependencies and tools to download
-$steam_depotdl_url = "https://github.com/SteamRE/DepotDownloader/releases/download/DepotDownloader_2.3.2/depotdownloader-2.3.2.zip"
+$steam_depotdl_url = "https://github.com/umod/DepotDownloader/releases/download/latest/dd.zip"
 $de4dot_url = "https://github.com/0xd4d/de4dot/suites/507020524/artifacts/2658127"
 $patcher_url = "https://github.com/OxideMod/Oxide.Patcher/releases/download/latest/OxidePatcher.exe"
 
