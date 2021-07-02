@@ -161,7 +161,7 @@ function Get-Dependencies {
         # Attempt to run DepotDownloader to get game DLLs
         try {
             Write-Host "$steam_access -app $steam_appid -branch $steam_branch $steam_depot -os $platform -dir $deps_dir"
-            Start-Process dotnet -WorkingDirectory $tools_dir -ArgumentList "$steam_depotdl_dll $steam_access -app $steam_appid -branch $steam_branch $steam_depot -os $platform -dir $platform_dir -filelist $references_file" -NoNewWindow -Wait
+            Start-Process dotnet -WorkingDirectory $tools_dir -ArgumentList "$steam_depotdl_dll $steam_access -app $steam_appid -branch $steam_branch $steam_depot -cellid 84 -os $platform -dir $platform_dir -filelist $references_file" -NoNewWindow -Wait
         } catch {
             Write-Host "Error: Could not start or complete getting dependencies"
             Write-Host $_.Exception | Format-List -Force
